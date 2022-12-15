@@ -1,9 +1,9 @@
-@Library('sendSlackNotifications') _
+@Library('JenkinsLibShared') _
 node{
 	
 	
 	try{
-		slackNotification('STARTED')
+		sendSlackNotifications('STARTED')
 		def mavenHome = tool name: 'maven3.8.6'
 		
 		echo "the Jobname is: ${env.JOB_NAME}"
@@ -39,7 +39,7 @@ node{
 		throw e
 	}//catch closing
 	finally{
-		slackNotification(currentBuild.result)
+		sendSlackNotifications(currentBuild.result)
 	}//finally closing
 	
 }// node closing
