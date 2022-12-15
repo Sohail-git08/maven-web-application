@@ -1,4 +1,4 @@
-@Library('JenkinsLibShared') _
+@Library('sendSlackNotifications') _
 node{
 	
 	
