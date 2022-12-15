@@ -20,7 +20,7 @@ node{
 			sh "${mavenHome}/bin/mvn clean package"
 		}
 		
-		stage('ExecuteSonarReport'){
+		/*stage('ExecuteSonarReport'){
 			sh "${mavenHome}/bin/mvn clean sonar:sonar"
 		}
 		
@@ -32,7 +32,7 @@ node{
 			sshagent(['611eaf59-b9c7-4e48-b2ca-6662d6b19e30']) {
 				sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.4.250:/opt/apache-tomcat-9.0.70/webapps/"
 			}
-		}
+		}*/
 	}//try closing
 	catch(e){
 		currentBuild.result="FAILURE"
